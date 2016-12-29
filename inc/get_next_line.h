@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 22:56:46 by ariard            #+#    #+#             */
-/*   Updated: 2016/12/29 23:34:06 by ariard           ###   ########.fr       */
+/*   Created: 2016/11/16 22:33:07 by ariard            #+#    #+#             */
+/*   Updated: 2016/12/30 00:07:29 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "free.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int		ft_isdigit(int c)
+# define BUFF_SIZE 1024
+
+typedef struct		s_gnl
 {
-	if ((c >= '0' && c <= '9'))
-		return (1);
-	return (0);
-}
+	int				ret;
+	char			*check;
+	char			*string;
+	size_t			len;
+	char			buf[BUFF_SIZE + 1];
+}					t_gnl;
+
+int					get_next_line(const int fd, char **line);
+
+#endif

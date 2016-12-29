@@ -6,7 +6,7 @@
 #    By: ariard <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 17:57:47 by ariard            #+#    #+#              #
-#    Updated: 2016/12/29 20:30:59 by ariard           ###   ########.fr        #
+#    Updated: 2016/12/30 00:08:35 by ariard           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,12 +107,14 @@ SRCS_SORT=	$(SRC_ALGO)/sort/ft_stralphcmp.c \
 			$(SRC_ALGO)/sort/insert_sort.c \
 			$(SRC_ALGO)/sort/bubble_sort.c \
 
+SRCS_GNL=	$(SRC_DIR)/gnl/get_next_line.c \
+
 SRCS += $(SRCS_STRING)
 SRCS += $(SRCS_MEM)
 SRCS += $(SRCS_PRINT)
 SRCS += $(SRCS_INT)
 SRCS += $(SRCS_DLIST)
-
+SRCS += $(SRCS_GNL)
 
 OBJS = $(SRCS:.c=.o)
 

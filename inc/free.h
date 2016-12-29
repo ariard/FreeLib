@@ -6,13 +6,16 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/28 17:08:08 by ariard            #+#    #+#             */
-/*   Updated: 2016/12/29 20:35:42 by ariard           ###   ########.fr       */
+/*   Updated: 2016/12/30 00:07:59 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FREE_H
 # define FREE_H
 
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
@@ -30,5 +33,7 @@
 # include "int.h"
 
 # include "sort.h"
+
+# include "get_next_line.h"
 
 #endif
