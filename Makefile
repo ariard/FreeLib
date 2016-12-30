@@ -6,7 +6,7 @@
 #    By: ariard <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 17:57:47 by ariard            #+#    #+#              #
-#    Updated: 2016/12/30 15:46:19 by ariard           ###   ########.fr        #
+#    Updated: 2016/12/30 16:01:17 by ariard           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,27 +121,27 @@ OBJS = $(SRCS:.c=.o)
 NAME = freelib
 
 all: link
-	$(MAKE) ranlib
-	$(MAKE) copylib
+	@ $(MAKE) ranlib
+	@ $(MAKE) copylib
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@ $(CC) $(CFLAGS) -c $< -o $@
 
 link: $(OBJS)
-	ar rc $(NAME).a $(OBJS)
+	@ ar rc $(NAME).a $(OBJS)
 
 ranlib: 
-	ranlib $(NAME).a
+	@ ranlib $(NAME).a
 
 copylib:
-	$(CP) $(NAME).a ../$(NAME).a
+	@ $(CP) $(NAME).a ../$(NAME).a
 
 clean:
-	$(RM) $(OBJS)
+	@ $(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME).a
+	@ $(RM) $(NAME).a
 
 re: fclean
-	$(MAKE) -j all
+	@ $(MAKE) -j all
 
