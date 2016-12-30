@@ -6,7 +6,7 @@
 #    By: ariard <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 17:57:47 by ariard            #+#    #+#              #
-#    Updated: 2016/12/30 00:08:35 by ariard           ###   ########.fr        #
+#    Updated: 2016/12/30 15:46:19 by ariard           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,7 +107,7 @@ SRCS_SORT=	$(SRC_ALGO)/sort/ft_stralphcmp.c \
 			$(SRC_ALGO)/sort/insert_sort.c \
 			$(SRC_ALGO)/sort/bubble_sort.c \
 
-SRCS_GNL=	$(SRC_DIR)/gnl/get_next_line.c \
+SRCS_GNL=	$(SRC_DIR)/get_next_line/get_next_line.c \
 
 SRCS += $(SRCS_STRING)
 SRCS += $(SRCS_MEM)
