@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*   ft_cht_insert.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/23 15:43:15 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/02 20:32:19 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/02 19:55:05 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/02 20:00:56 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-void	ft_list_clear(t_dlist **begin_list,
-		void (*destroy)(void *))
+void		ft_cht_insert(t_cht *htb, void *data, void *key,
+		int (*match)(const char *key1, const char *key2))
 {
-	t_dlist	*tmp;
+	int		bucket;
 
-	while (*begin_list)
-	{
-		tmp = (*begin_list)->next;
-		destroy(*begin_list);
-		*begin_list = NULL;
-		*begin_list = tmp;
-	}
-	begin_list = NULL;
+	if (ft_cht_lookup(htb, data, match))
+		return ;
+	bucket = htb->h(data, htb->capacity);
+	ft_list_push_back(&htb->head[bucket], data, key);
+	htb->size++;
 }

@@ -6,13 +6,13 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 01:25:53 by ariard            #+#    #+#             */
-/*   Updated: 2016/12/29 17:57:22 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/02 20:36:26 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-t_dlist		*ft_create_elem(void *data)
+t_dlist		*ft_create_elem(void *data, void *key)
 {
 	t_dlist	*node;
 
@@ -21,6 +21,7 @@ t_dlist		*ft_create_elem(void *data)
 	if (node != 0)
 	{
 		node->data = data;
+		node->key = key;
 		node->next = NULL;
 		node->previous = NULL;
 	}

@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/23 15:43:15 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/02 20:32:19 by ariard           ###   ########.fr       */
+/*   Created: 2016/12/31 15:16:24 by ariard            #+#    #+#             */
+/*   Updated: 2016/12/31 15:20:32 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-void	ft_list_clear(t_dlist **begin_list,
-		void (*destroy)(void *))
+int			ft_isspace(int c)
 {
-	t_dlist	*tmp;
-
-	while (*begin_list)
-	{
-		tmp = (*begin_list)->next;
-		destroy(*begin_list);
-		*begin_list = NULL;
-		*begin_list = tmp;
-	}
-	begin_list = NULL;
+	return (((c == 9) || (c == 10) || (c == 11) || (c == 12) || (c == 13) ||
+				(c == 32)) ? 1 : 0);
 }

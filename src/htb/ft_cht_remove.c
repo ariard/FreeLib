@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*   ft_cht_remove.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/23 15:43:15 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/02 20:32:19 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/02 20:00:11 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/02 20:38:07 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-void	ft_list_clear(t_dlist **begin_list,
-		void (*destroy)(void *))
+void		*ft_cht_remove(t_cht *htb, void *data,
+		int (*match)(const char *key1, const char *key2))
 {
+	int		bucket;
 	t_dlist	*tmp;
 
-	while (*begin_list)
+	bucket = htb->h(data, htb->capacity);
+	tmp = htb->head[bucket];
+	while (tmp)
 	{
-		tmp = (*begin_list)->next;
-		destroy(*begin_list);
-		*begin_list = NULL;
-		*begin_list = tmp;
+		if (tmp->key)
+			if (((match)(data, tmp->key)) == 0)
+			{
+				htb->size--;
+				return (ft_list_rem(&htb->head[bucket], tmp));
+			}
+		tmp = tmp->next;
 	}
-	begin_list = NULL;
+	return (NULL);
 }

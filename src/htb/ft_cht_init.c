@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*   ft_cht_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/23 15:43:15 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/02 20:32:19 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/02 19:40:48 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/02 20:37:25 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-void	ft_list_clear(t_dlist **begin_list,
-		void (*destroy)(void *))
+void		ft_cht_init(t_cht *htb, int capacity,
+		int (*h)(const void *key, int size), void (*destroy)(void *data))
 {
-	t_dlist	*tmp;
+	int		i;
 
-	while (*begin_list)
+	htb->head = ft_memalloc(capacity * sizeof(t_dlist *));
+	i = 0;
+	while (i < capacity)
 	{
-		tmp = (*begin_list)->next;
-		destroy(*begin_list);
-		*begin_list = NULL;
-		*begin_list = tmp;
+		ft_list_init(&htb->head[i], destroy);
+		i++;
 	}
-	begin_list = NULL;
+	htb->capacity = capacity;
+	htb->size = 0;
+	htb->h = h;
 }
