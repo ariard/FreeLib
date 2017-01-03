@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.h                                             :+:      :+:    :+:   */
+/*   getchar.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/28 17:08:08 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/02 20:10:41 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/03 14:48:57 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/03 14:50:40 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FREE_H
-# define FREE_H
+#include "free.h"
 
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
+int			ft_getchar(const int fd, char *c)
+{
+	int		ret;
 
-# include "dlist.h"
-
-# include "stack.h"
-
-# include "string.h"
-
-# include "mem.h"
-
-# include "print.h"
-
-# include "int.h"
-
-# include "sort.h"
-
-# include "get_next_line.h"
-
-# include "htb.h"
-
-#endif
+	if (fd < 0 || c == NULL)
+		return (-1);
+	ret = read(fd, c, 1);
+	return (ret);
+}

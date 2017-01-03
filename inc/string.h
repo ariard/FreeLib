@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/28 17:21:25 by ariard            #+#    #+#             */
-/*   Updated: 2016/12/29 20:01:16 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/03 14:48:01 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,12 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 
 /*
+** Whitespace character test
+*/
+
+int					ft_isspace(int c);
+
+/*
 ** Lower case to upper case letter conversion
 */
 
@@ -224,4 +230,9 @@ char				**ft_strsplit(char const *s, char c);
 
 size_t				ft_sizewchar(wchar_t w);
 
+/*
+** Save a copy of an array of string
+*/
+
+char				**ft_array_strdup(char **array);
 #endif

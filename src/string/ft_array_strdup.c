@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.h                                             :+:      :+:    :+:   */
+/*   ft_array_strdup.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/28 17:08:08 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/02 20:10:41 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/03 14:44:53 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/03 14:48:45 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FREE_H
-# define FREE_H
+#include "free.h"
 
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
+char			**ft_array_strdup(char **array)
+{
+	int			size;
+	char		**tmp;
+	char		**new;
 
-# include "dlist.h"
-
-# include "stack.h"
-
-# include "string.h"
-
-# include "mem.h"
-
-# include "print.h"
-
-# include "int.h"
-
-# include "sort.h"
-
-# include "get_next_line.h"
-
-# include "htb.h"
-
-#endif
+	size = 0;
+	tmp = array;
+	while (*tmp++)
+		size++;
+	new = ft_memalloc(sizeof(char *) * (size + 1));
+	tmp = new;
+	while (*array)
+		*new++ = ft_strdup(*array++);
+	*new = 0;
+	return (tmp);
+}

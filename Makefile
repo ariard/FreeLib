@@ -6,7 +6,7 @@
 #    By: ariard <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 17:57:47 by ariard            #+#    #+#              #
-#    Updated: 2016/12/30 16:07:05 by ariard           ###   ########.fr        #
+#    Updated: 2017/01/03 14:52:06 by ariard           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,15 @@ CFLAGS += -Wall -Wextra -Werror
 CFLAGS += -I ./inc/
 
 SRC_DIR = src
+SRC_ALGO = src/algo
+
 
 SRCS_STRING = $(SRC_DIR)/string/ft_isalnum.c \
 			$(SRC_DIR)/string/ft_isalpha.c \
 			$(SRC_DIR)/string/ft_isascii.c \
 			$(SRC_DIR)/string/ft_isdigit.c \
 			$(SRC_DIR)/string/ft_isprint.c \
+			$(SRC_DIR)/string/ft_isspace.c \
 			$(SRC_DIR)/string/ft_strcat.c \
 			$(SRC_DIR)/string/ft_strchr.c \
 			$(SRC_DIR)/string/ft_strchrcpy.c \
@@ -51,7 +54,8 @@ SRCS_STRING = $(SRC_DIR)/string/ft_isalnum.c \
 			$(SRC_DIR)/string/ft_strtrim.c \
 			$(SRC_DIR)/string/ft_tolower.c \
 			$(SRC_DIR)/string/ft_toupper.c \
-			$(SRC_DIR)/string/ft_sizewchar.c 
+			$(SRC_DIR)/string/ft_sizewchar.c \
+			$(SRC_DIR)/string/ft_array_strdup.c
 
 SRCS_MEM=	$(SRC_DIR)/mem/ft_bzero.c \
 			$(SRC_DIR)/mem/ft_memalloc.c \
@@ -108,6 +112,14 @@ SRCS_SORT=	$(SRC_ALGO)/sort/ft_stralphcmp.c \
 			$(SRC_ALGO)/sort/bubble_sort.c \
 
 SRCS_GNL=	$(SRC_DIR)/get_next_line/get_next_line.c \
+			$(SRC_DIR)/get_next_line/getchar.c
+
+SRCS_HTB=	$(SRC_DIR)/htb/ft_cht_destroy.c \
+			$(SRC_DIR)/htb/ft_cht_init.c \
+			$(SRC_DIR)/htb/ft_cht_lookup.c \
+		   	$(SRC_DIR)/htb/ft_cht_insert.c \
+			$(SRC_DIR)/htb/ft_cht_remove.c \
+			$(SRC_DIR)/htb/ft_hash_string.c
 
 SRCS += $(SRCS_STRING)
 SRCS += $(SRCS_MEM)
@@ -115,6 +127,7 @@ SRCS += $(SRCS_PRINT)
 SRCS += $(SRCS_INT)
 SRCS += $(SRCS_DLIST)
 SRCS += $(SRCS_GNL)
+SRCS += $(SRCS_HTB)
 
 OBJS = $(SRCS:.c=.o)
 
