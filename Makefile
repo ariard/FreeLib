@@ -6,7 +6,7 @@
 #    By: ariard <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 17:57:47 by ariard            #+#    #+#              #
-#    Updated: 2017/01/03 14:52:06 by ariard           ###   ########.fr        #
+#    Updated: 2017/01/03 15:45:59 by ariard           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,6 +102,7 @@ SRCS_DLIST= $(SRC_DIR)/dlist/ft_create_elem.c \
 			$(SRC_DIR)/dlist/ft_list_reverse.c \
 			$(SRC_DIR)/dlist/ft_list_size.c \
 			$(SRC_DIR)/dlist/ft_list_swap.c \
+			$(SRC_DIR)/dlist/ft_list_init.c
 
 SRCS_STACK= $(SRC_DIR)/stack/ft_stack_push.c \
 			$(SRC_DIR)/stack/ft_stack_pop.c \

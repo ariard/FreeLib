@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/02 19:55:05 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/02 20:00:56 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/03 18:35:35 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void		ft_cht_insert(t_cht *htb, void *data, void *key,
 {
 	int		bucket;
 
-	if (ft_cht_lookup(htb, data, match))
+	if (ft_cht_lookup(htb, key, match))
 		return ;
-	bucket = htb->h(data, htb->capacity);
+	bucket = htb->h(key, htb->capacity);
 	ft_list_push_back(&htb->head[bucket], data, key);
 	htb->size++;
 }

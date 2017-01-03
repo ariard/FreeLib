@@ -6,14 +6,14 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/31 17:20:31 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/02 23:10:30 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/03 18:39:54 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HTABLE_H
 # define HTABLE_H
 
-# include "free.h"
+# include "dlist.h"
 
 typedef struct		s_cht
 {

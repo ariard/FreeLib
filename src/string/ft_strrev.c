@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 17:10:53 by ariard            #+#    #+#             */
-/*   Updated: 2016/12/11 17:26:44 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/03 16:53:31 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void		ft_strrev(char *s)
 {
-	char	*tmp;
 	char	c;
+	int		i;
+	int		j;
 
-	tmp = s;
-	while (*tmp + 1)
-		tmp++;
-	while (s < tmp)
+	i = ft_strlen(s) - 1;
+	j = 0;
+	while (j < i)
 	{
-		c = *s;
-		*s = *tmp;
-		*tmp = c;
-		s++;
-		tmp--;
+		c = s[j];
+		s[j] = s[i];
+		s[i] = c;
+		j++;
+		i--;
 	}
 }
