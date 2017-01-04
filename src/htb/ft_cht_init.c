@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/02 19:40:48 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/03 19:15:35 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/04 19:52:20 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void		ft_cht_init(t_cht *htb, int capacity,
 {
 	int		i;
 
-	htb->head = ft_memalloc(capacity * sizeof(t_dlist *));
+	(void)destroy;
+	htb->head = (t_dlist **)malloc(capacity * sizeof(t_dlist *));
 	i = 0;
 	while (i < capacity)
 	{

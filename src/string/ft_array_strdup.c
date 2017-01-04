@@ -6,26 +6,33 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/03 14:44:53 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/03 14:48:45 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/04 18:56:08 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
+static size_t	ft_count_words(char  **s)
+{
+	size_t		len;
+
+	len = 0;
+	while (*s++)
+		len++;
+	return (len);
+}
+		
 char			**ft_array_strdup(char **array)
 {
 	int			size;
+	char		**tab;
 	char		**tmp;
-	char		**new;
 
-	size = 0;
-	tmp = array;
-	while (*tmp++)
-		size++;
-	new = ft_memalloc(sizeof(char *) * (size + 1));
-	tmp = new;
+	size = ft_count_words(array); 
+	tab = ft_memalloc(size * sizeof(char *) + 1);
+	tmp = tab;
 	while (*array)
-		*new++ = ft_strdup(*array++);
-	*new = 0;
+		*tab++ = ft_strdup(*array++);
+	*tab = 0;	
 	return (tmp);
 }
