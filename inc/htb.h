@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/31 17:20:31 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/04 19:48:13 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/05 00:04:35 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,6 @@ typedef struct		s_cht
 	int				(*h)(const void *key, int size);
 	t_dlist			**head;
 }					t_cht;
-
-typedef struct		s_pos
-{
-	char			pos1;
-	char			pos2;
-	char			pos3;
-	char			pos4;
-}					t_pos;
 
 /*
 ** Hash a string and return a key

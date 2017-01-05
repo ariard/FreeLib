@@ -1,43 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.h                                             :+:      :+:    :+:   */
+/*   ft_btree_init.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/28 17:08:08 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/05 16:29:09 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/04 23:56:27 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/05 15:50:19 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FREE_H
-# define FREE_H
+#include "free.h"
 
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-
-# include "dlist.h"
-
-# include "stack.h"
-
-# include "string.h"
-
-# include "mem.h"
-
-# include "print.h"
-
-# include "int.h"
-
-# include "sort.h"
-
-# include "get_next_line.h"
-
-# include "htb.h"
-
-# include "btree.h"
-
-#endif
+void		ft_btree_init(t_root *btree_root,
+		int (*cmp) (const char *key1, const char *key2))
+{
+	btree_root->cmp = cmp;
+	btree_root->size = 0;
+	btree_root->root = NULL;
+}

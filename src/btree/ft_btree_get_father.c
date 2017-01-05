@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cht_init.c                                      :+:      :+:    :+:   */
+/*   ft_btree_get_node.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/02 19:40:48 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/04 20:32:50 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/05 14:40:23 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/05 15:53:02 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-void		ft_cht_init(t_cht *htb, int capacity,
-		int (*h)(const void *key, int size), void (*destroy)(void *data))
+t_btree		*ft_get_father(t_btree *root, t_btree *father, void *key,
+	int (*cmp)(const char *key1, const char *key2))
 {
-	int		i;
+	t_btree		*tmp;
 
-	(void)destroy;
-	htb->head = (t_dlist **)malloc(capacity * sizeof(t_dlist *));
-	i = 0;
-	while (i < capacity)
+	if (root)
+		if ((cmp)(key, root->key) == 0)
+			return (father);
+	if (root->left)
 	{
-		ft_list_init(&htb->head[i], destroy);
-		i++;
+		tmp = ft_get_father(root->left, root, key, cmp);
+		if (tmp)
+			return (tmp);
 	}
-	htb->capacity = capacity;
-	htb->size = 0;
-	htb->h = h;
+	if (root->right)
+	{
+		tmp = ft_get_father(root->right, root, key, cmp);
+		if (tmp)
+			return (tmp);
+	}
+	return (NULL);
 }

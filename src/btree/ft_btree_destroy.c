@@ -1,43 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.h                                             :+:      :+:    :+:   */
+/*   ft_btree_destroy.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/28 17:08:08 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/05 16:29:09 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/05 16:22:30 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/05 16:26:52 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FREE_H
-# define FREE_H
+#include "free.h"
 
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-
-# include "dlist.h"
-
-# include "stack.h"
-
-# include "string.h"
-
-# include "mem.h"
-
-# include "print.h"
-
-# include "int.h"
-
-# include "sort.h"
-
-# include "get_next_line.h"
-
-# include "htb.h"
-
-# include "btree.h"
-
-#endif
+void		ft_btree_destroy(t_btree *root)
+{
+	if (root)
+	{
+		ft_btree_destroy(root->left);
+		ft_btree_destroy(root->right);
+		root->left = NULL;
+		root->right = NULL;
+		root->data = NULL;
+		root->key = NULL;
+		free(root);
+		root = NULL;
+	}
+}

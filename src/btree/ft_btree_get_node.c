@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.h                                             :+:      :+:    :+:   */
+/*   ft_btree_get_node.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/28 17:08:08 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/05 16:29:09 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/05 14:40:23 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/05 16:39:09 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FREE_H
-# define FREE_H
+#include "free.h"
 
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
+t_btree		*ft_get_node(t_btree *root, void *key,
+	int (*cmp)(const char *key1, const char *key2))
+{
+	t_btree		*tmp;
 
-# include "dlist.h"
-
-# include "stack.h"
-
-# include "string.h"
-
-# include "mem.h"
-
-# include "print.h"
-
-# include "int.h"
-
-# include "sort.h"
-
-# include "get_next_line.h"
-
-# include "htb.h"
-
-# include "btree.h"
-
-#endif
+	if (root)
+		if ((cmp)(key, root->key) == 0)
+			return (root);
+	if (root->left)
+	{
+		tmp = ft_get_node(root->left, key, cmp);
+		if (tmp)
+			return (tmp);
+	}
+	if (root->right)
+	{
+		tmp = ft_get_node(root->right, key, cmp);
+		if (tmp)
+			return (tmp);
+	}
+	return (NULL);
+}

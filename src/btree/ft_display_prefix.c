@@ -1,43 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.h                                             :+:      :+:    :+:   */
+/*   ft_display_prefix.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/28 17:08:08 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/05 16:29:09 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/05 14:40:48 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/05 15:54:32 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FREE_H
-# define FREE_H
+#include "free.h"
 
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-
-# include "dlist.h"
-
-# include "stack.h"
-
-# include "string.h"
-
-# include "mem.h"
-
-# include "print.h"
-
-# include "int.h"
-
-# include "sort.h"
-
-# include "get_next_line.h"
-
-# include "htb.h"
-
-# include "btree.h"
-
-#endif
+void		ft_display_prefix(t_btree *root)
+{
+	if (root)
+	{
+		if (root->key)
+			ft_putstr((char *)root->key);
+		else
+			ft_putstr("null key");
+	}
+	if (root->left)
+		ft_display_prefix(root->left);
+	if (root->right)
+		ft_display_prefix(root->right);
+}

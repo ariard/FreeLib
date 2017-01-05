@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.h                                             :+:      :+:    :+:   */
+/*   ft_btree_ins_left.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/28 17:08:08 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/05 16:29:09 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/04 23:57:53 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/05 15:51:38 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FREE_H
-# define FREE_H
+#include "free.h"
 
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
+int			ft_btree_ins_left(t_root *tree, t_btree *father,
+	void *data, void *key)
+{
+	t_btree	**position;
 
-# include "dlist.h"
-
-# include "stack.h"
-
-# include "string.h"
-
-# include "mem.h"
-
-# include "print.h"
-
-# include "int.h"
-
-# include "sort.h"
-
-# include "get_next_line.h"
-
-# include "htb.h"
-
-# include "btree.h"
-
-#endif
+	if (!father)
+	{
+		if (tree->size == 0)
+			position = &tree->root;
+		else
+			return (-1);
+	}
+	if (father)
+	{
+		if (!father->left)
+			position = &father->left;
+		else
+			return (-1);
+	}
+	ft_create_node(position, data, key);
+	tree->size++;
+	return (0);
+}
