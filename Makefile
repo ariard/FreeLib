@@ -6,7 +6,7 @@
 #    By: ariard <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 17:57:47 by ariard            #+#    #+#              #
-#    Updated: 2017/01/03 15:45:59 by ariard           ###   ########.fr        #
+#    Updated: 2017/01/05 16:46:59 by ariard           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,6 +122,16 @@ SRCS_HTB=	$(SRC_DIR)/htb/ft_cht_destroy.c \
 			$(SRC_DIR)/htb/ft_cht_remove.c \
 			$(SRC_DIR)/htb/ft_hash_string.c
 
+SRCS_BTREE= $(SRC_DIR)/btree/ft_btree_init.c \
+			$(SRC_DIR)/btree/ft_btree_ins_left.c \
+			$(SRC_DIR)/btree/ft_btree_ins_right.c \
+			$(SRC_DIR)/btree/ft_create_node.c \
+			$(SRC_DIR)/btree/ft_btree_get_node.c \
+			$(SRC_DIR)/btree/ft_btree_get_father.c \
+			$(SRC_DIR)/btree/ft_rem_node.c \
+			$(SRC_DIR)/btree/ft_btree_destroy.c \
+			$(SRC_DIR)/btree/ft_display_prefix.c
+
 SRCS += $(SRCS_STRING)
 SRCS += $(SRCS_MEM)
 SRCS += $(SRCS_PRINT)
@@ -129,6 +139,7 @@ SRCS += $(SRCS_INT)
 SRCS += $(SRCS_DLIST)
 SRCS += $(SRCS_GNL)
 SRCS += $(SRCS_HTB)
+SRCS += $(SRCS_BTREE)
 
 OBJS = $(SRCS:.c=.o)
 
