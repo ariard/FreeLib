@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/28 17:21:25 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/03 14:48:01 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/06 13:45:33 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ size_t				ft_strlenchr(const char *s, char c);
 */
 
 char				*ft_strdup(const char *s1);
+
+/*
+** Save a copy of a string until match
+*/
+
+char				*ft_strduptr(char *str, int(*is)(int c));
 
 /*
 ** Copy string
@@ -235,4 +241,17 @@ size_t				ft_sizewchar(wchar_t w);
 */
 
 char				**ft_array_strdup(char **array);
+
+/*
+** Count the number of words in a stream
+*/
+
+size_t				ft_count_words(char *str, int (*is)(int c));
+
+/*
+**	Return an array of new strings from an old one splitted by user macro		
+*/
+
+char				**ft_strsplitptr(char *str, int (*is)(int c));
+
 #endif

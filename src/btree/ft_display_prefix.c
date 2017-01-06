@@ -6,18 +6,22 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 14:40:48 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/05 15:54:32 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/05 20:37:16 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
+#include <stdio.h>
 
 void		ft_display_prefix(t_btree *root)
 {
 	if (root)
 	{
 		if (root->key)
+		{
 			ft_putstr((char *)root->key);
+			ft_putstr("\n|\n");
+		}
 		else
 			ft_putstr("null key");
 	}

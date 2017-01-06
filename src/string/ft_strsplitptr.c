@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_ins_right.c                               :+:      :+:    :+:   */
+/*   ft_strsplitptr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/04 23:58:30 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/05 17:48:22 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/05 23:15:27 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/06 14:00:50 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-t_btree			*ft_btree_ins_right(t_root *btree_root, t_btree *father,
-		void *key, void *data)
+char		**ft_strsplitptr(char *str, int (*is)(int c))
 {
-	t_btree	**position;
-	t_btree	*tmp;
+	char	**array;
+	char	**tmp;
 
-	if (!father)
+	array = ft_memalloc(ft_count_words(str, is) * sizeof(char *) + 1);
+	tmp = array;
+	while (*str)
 	{
-		if (btree_root->size == 0)
-			position = &btree_root->root;
-		else
-			return (NULL);
+		while (*str && (is)((int)*str) == 1)
+			str++;
+		*array = ft_strduptr(str, &ft_isspace);
+		str += ft_strlen(*array) + 1;
+		array++;
 	}
-	if (father)
-	{
-		if (!father->right)
-			position = &father->right;
-		else
-			return (NULL);
-	}
-	tmp = ft_btree_create_node(position, data, key);
-	btree_root->size++;
+	*array = 0;
 	return (tmp);
 }

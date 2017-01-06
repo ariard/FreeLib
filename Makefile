@@ -6,7 +6,7 @@
 #    By: ariard <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 17:57:47 by ariard            #+#    #+#              #
-#    Updated: 2017/01/05 16:46:59 by ariard           ###   ########.fr        #
+#    Updated: 2017/01/06 13:46:13 by ariard           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,10 @@ SRCS_STRING = $(SRC_DIR)/string/ft_isalnum.c \
 			$(SRC_DIR)/string/ft_tolower.c \
 			$(SRC_DIR)/string/ft_toupper.c \
 			$(SRC_DIR)/string/ft_sizewchar.c \
-			$(SRC_DIR)/string/ft_array_strdup.c
+			$(SRC_DIR)/string/ft_array_strdup.c \
+			$(SRC_DIR)/string/ft_strsplitptr.c \
+			$(SRC_DIR)/string/ft_count_words.c \
+			$(SRC_DIR)/string/ft_strduptr.c
 
 SRCS_MEM=	$(SRC_DIR)/mem/ft_bzero.c \
 			$(SRC_DIR)/mem/ft_memalloc.c \
@@ -102,7 +105,8 @@ SRCS_DLIST= $(SRC_DIR)/dlist/ft_create_elem.c \
 			$(SRC_DIR)/dlist/ft_list_reverse.c \
 			$(SRC_DIR)/dlist/ft_list_size.c \
 			$(SRC_DIR)/dlist/ft_list_swap.c \
-			$(SRC_DIR)/dlist/ft_list_init.c
+			$(SRC_DIR)/dlist/ft_list_init.c \
+			$(SRC_DIR)/dlist/ft_list_next.c
 
 SRCS_STACK= $(SRC_DIR)/stack/ft_stack_push.c \
 			$(SRC_DIR)/stack/ft_stack_pop.c \
@@ -125,7 +129,7 @@ SRCS_HTB=	$(SRC_DIR)/htb/ft_cht_destroy.c \
 SRCS_BTREE= $(SRC_DIR)/btree/ft_btree_init.c \
 			$(SRC_DIR)/btree/ft_btree_ins_left.c \
 			$(SRC_DIR)/btree/ft_btree_ins_right.c \
-			$(SRC_DIR)/btree/ft_create_node.c \
+			$(SRC_DIR)/btree/ft_btree_create_node.c \
 			$(SRC_DIR)/btree/ft_btree_get_node.c \
 			$(SRC_DIR)/btree/ft_btree_get_father.c \
 			$(SRC_DIR)/btree/ft_rem_node.c \

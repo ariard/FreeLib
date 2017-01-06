@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/29 17:51:25 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/05 16:28:56 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/05 17:57:17 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,7 @@ void				ft_list_ins(t_dlist *node1, t_dlist *node2);
 
 void				ft_list_init(t_dlist **begin_list,
 		void (*destroy)(void *data));
+
+t_dlist				*ft_list_next(t_dlist *current, int next);
 
 #endif

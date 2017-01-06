@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_node.c                                   :+:      :+:    :+:   */
+/*   ft_strduptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/04 23:57:06 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/05 14:48:24 by ariard           ###   ########.fr       */
+/*   Created: 2017/01/06 13:37:12 by ariard            #+#    #+#             */
+/*   Updated: 2017/01/06 14:02:18 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-void		ft_create_node(t_btree **position, void *data, void *key)
+char		*ft_strduptr(char *str, int (*is)(int c))
 {
-	t_btree	*node;
+	char	*new;
+	char	*tmp;
 
-	node = ft_memalloc(sizeof(t_btree));
-	node->data = data;
-	node->key = key;
-	node->left = NULL;
-	node->right = NULL;
-	*position = node;
+	new = ft_memalloc(sizeof(char *) * ft_strlen(str) + 1);
+	tmp = new;
+	while (*str && (is)((int)*str) == 0)
+		*new++ = *str++;
+	*new = 0;
+	return (tmp);
 }
