@@ -6,7 +6,7 @@
 #    By: ariard <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 17:57:47 by ariard            #+#    #+#              #
-#    Updated: 2016/12/30 00:08:35 by ariard           ###   ########.fr        #
+#    Updated: 2017/01/17 17:32:59 by ariard           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,14 @@ CFLAGS += -Wall -Wextra -Werror
 CFLAGS += -I ./inc/
 
 SRC_DIR = src
+SRC_ALGO = src/algo
 
 SRCS_STRING = $(SRC_DIR)/string/ft_isalnum.c \
 			$(SRC_DIR)/string/ft_isalpha.c \
 			$(SRC_DIR)/string/ft_isascii.c \
 			$(SRC_DIR)/string/ft_isdigit.c \
 			$(SRC_DIR)/string/ft_isprint.c \
+			$(SRC_DIR)/string/ft_isspace.c \
 			$(SRC_DIR)/string/ft_strcat.c \
 			$(SRC_DIR)/string/ft_strchr.c \
 			$(SRC_DIR)/string/ft_strchrcpy.c \
@@ -51,7 +53,23 @@ SRCS_STRING = $(SRC_DIR)/string/ft_isalnum.c \
 			$(SRC_DIR)/string/ft_strtrim.c \
 			$(SRC_DIR)/string/ft_tolower.c \
 			$(SRC_DIR)/string/ft_toupper.c \
-			$(SRC_DIR)/string/ft_sizewchar.c 
+			$(SRC_DIR)/string/ft_sizewchar.c \
+			$(SRC_DIR)/string/ft_strsplitptr.c \
+			$(SRC_DIR)/string/ft_count_words.c \
+			$(SRC_DIR)/string/ft_strduptr.c \
+			$(SRC_DIR)/string/ft_str_epure.c \
+			$(SRC_DIR)/string/ft_str_copy.c \
+			$(SRC_DIR)/string/ft_count_words_ptr.c \
+			$(SRC_DIR)/string/ft_str_substitute.c \
+			$(SRC_DIR)/string/ft_str_inschr.c \
+			$(SRC_DIR)/string/ft_str_delchr.c \
+			$(SRC_DIR)/string/ft_count_char.c
+
+SRCS_ARRAY	= $(SRC_DIR)/array/ft_array_strdup.c \
+			$(SRC_DIR)/array/ft_array_del.c \
+			$(SRC_DIR)/array/ft_array_size.c \
+			$(SRC_DIR)/array/ft_array_clean.c \
+			$(SRC_DIR)/array/ft_array_add.c
 
 SRCS_MEM=	$(SRC_DIR)/mem/ft_bzero.c \
 			$(SRC_DIR)/mem/ft_memalloc.c \
@@ -73,7 +91,8 @@ SRCS_PRINT=	$(SRC_DIR)/print/ft_putchar.c \
 			$(SRC_DIR)/print/ft_putstr_fd.c \
 			$(SRC_DIR)/print/ft_putstrn.c \
 			$(SRC_DIR)/print/ft_putwchar.c \
-			$(SRC_DIR)/print/ft_putwstr.c
+			$(SRC_DIR)/print/ft_putwstr.c \
+			$(SRC_DIR)/print/ft_putarray.c
 
 SRCS_INT=	$(SRC_DIR)/int/ft_intlen.c \
 			$(SRC_DIR)/int/ft_unsintlen.c \
@@ -82,6 +101,7 @@ SRCS_INT=	$(SRC_DIR)/int/ft_intlen.c \
 			$(SRC_DIR)/int/ft_itoa.c \
 			$(SRC_DIR)/int/ft_itoa_base.c \
 			$(SRC_DIR)/int/ft_recursive_power.c \
+			$(SRC_DIR)/int/ft_itoacmp.c
 
 SRCS_DLIST= $(SRC_DIR)/dlist/ft_create_elem.c \
 			$(SRC_DIR)/dlist/ft_list_clear.c \
@@ -98,6 +118,8 @@ SRCS_DLIST= $(SRC_DIR)/dlist/ft_create_elem.c \
 			$(SRC_DIR)/dlist/ft_list_reverse.c \
 			$(SRC_DIR)/dlist/ft_list_size.c \
 			$(SRC_DIR)/dlist/ft_list_swap.c \
+			$(SRC_DIR)/dlist/ft_list_init.c \
+			$(SRC_DIR)/dlist/ft_list_next.c
 
 SRCS_STACK= $(SRC_DIR)/stack/ft_stack_push.c \
 			$(SRC_DIR)/stack/ft_stack_pop.c \
@@ -107,7 +129,26 @@ SRCS_SORT=	$(SRC_ALGO)/sort/ft_stralphcmp.c \
 			$(SRC_ALGO)/sort/insert_sort.c \
 			$(SRC_ALGO)/sort/bubble_sort.c \
 
-SRCS_GNL=	$(SRC_DIR)/gnl/get_next_line.c \
+SRCS_GNL=	$(SRC_DIR)/get_next_line/get_next_line.c \
+			$(SRC_DIR)/get_next_line/getchar.c
+
+SRCS_HTB=	$(SRC_DIR)/htb/ft_cht_destroy.c \
+			$(SRC_DIR)/htb/ft_cht_init.c \
+			$(SRC_DIR)/htb/ft_cht_lookup.c \
+		   	$(SRC_DIR)/htb/ft_cht_insert.c \
+			$(SRC_DIR)/htb/ft_cht_remove.c \
+			$(SRC_DIR)/htb/ft_hash_string.c
+
+SRCS_BTREE= $(SRC_DIR)/btree/ft_btree_init.c \
+			$(SRC_DIR)/btree/ft_btree_ins_left.c \
+			$(SRC_DIR)/btree/ft_btree_ins_right.c \
+			$(SRC_DIR)/btree/ft_btree_create_node.c \
+			$(SRC_DIR)/btree/ft_btree_get_node.c \
+			$(SRC_DIR)/btree/ft_btree_get_father.c \
+			$(SRC_DIR)/btree/ft_rem_node.c \
+			$(SRC_DIR)/btree/ft_btree_destroy.c \
+			$(SRC_DIR)/btree/ft_display_prefix.c \
+			$(SRC_DIR)/btree/ft_btree_sort_ins.c
 
 SRCS += $(SRCS_STRING)
 SRCS += $(SRCS_MEM)
@@ -115,33 +156,37 @@ SRCS += $(SRCS_PRINT)
 SRCS += $(SRCS_INT)
 SRCS += $(SRCS_DLIST)
 SRCS += $(SRCS_GNL)
+SRCS += $(SRCS_HTB)
+SRCS += $(SRCS_BTREE)
+SRCS += $(SRCS_ARRAY)
+SRCS += $(SRCS_SORT)
 
 OBJS = $(SRCS:.c=.o)
 
 NAME = freelib
 
 all: link
-	$(MAKE) ranlib
-	$(MAKE) copylib
+	@ $(MAKE) ranlib
+	@ $(MAKE) copylib
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@ $(CC) $(CFLAGS) -c $< -o $@
 
 link: $(OBJS)
-	ar rc $(NAME).a $(OBJS)
+	@ ar rc $(NAME).a $(OBJS)
 
 ranlib: 
-	ranlib $(NAME).a
+	@ ranlib $(NAME).a
 
 copylib:
-	$(CP) $(NAME).a ../$(NAME).a
+	@ $(CP) $(NAME).a ../$(NAME).a
 
 clean:
-	$(RM) $(OBJS)
+	@ $(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME).a
+	@ $(RM) $(NAME).a
 
 re: fclean
-	$(MAKE) -j all
+	@ $(MAKE) -j all
 

@@ -6,22 +6,23 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 16:40:49 by ariard            #+#    #+#             */
-/*   Updated: 2016/12/11 17:45:11 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/03 16:53:15 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-char		*ft_itoa_base(unsigned long long int nb,
-		size_t size_base, char new[])
+char		*ft_itoa_base(long long int nb,
+		size_t size_base)
 {
 	char	*base;
 	int		index;
 	int		len;
+	char	*new;
 
-	if (!new || size_base < 2)
+	if (size_base < 2 || size_base > 16)
 		return (0);
-	ft_bzero(new, 128);
+	new = ft_strnew(128);
 	base = "0123456789abcdef";
 	len = 0;
 	if ((nb) == 0)
@@ -34,5 +35,5 @@ char		*ft_itoa_base(unsigned long long int nb,
 	}
 	new[len] = 0;
 	ft_strrev(new);
-	return (new);
+	return (ft_strdup(new));
 }

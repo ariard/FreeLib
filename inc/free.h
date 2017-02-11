@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/28 17:08:08 by ariard            #+#    #+#             */
-/*   Updated: 2016/12/30 00:07:59 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/16 21:32:20 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,11 @@
 # include "sort.h"
 
 # include "get_next_line.h"
+
+# include "htb.h"
+
+# include "btree.h"
+
+# include "array.h"
 
 #endif

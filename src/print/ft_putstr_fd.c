@@ -6,16 +6,16 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 16:19:10 by ariard            #+#    #+#             */
-/*   Updated: 2016/11/23 16:36:46 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/29 20:45:47 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+int		ft_putstr_fd(char const *s, int fd)
 {
 	if (!s)
-		return ;
-	while (*s)
-		write(fd, s++, 1);
+		return (0);
+	write(fd, s, ft_strlen(s));
+	return (ft_strlen(s));
 }

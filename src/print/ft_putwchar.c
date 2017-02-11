@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 17:37:31 by ariard            #+#    #+#             */
-/*   Updated: 2016/12/11 18:02:33 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/08 17:58:45 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int			ft_print_wchar(char *tab, wchar_t w, int len2)
 
 	ft_bzero(to_print, 128);
 	ft_bzero(s, 128);
-	ft_itoa_base((unsigned long long int)w, 2, s);
+	ft_itoa_base((unsigned long long int)w, 2);
 	ft_fill(tab, s, to_print, len2);
 	len2 = 0;
 	len = ft_strlen(to_print);

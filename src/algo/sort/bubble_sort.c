@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/29 20:20:46 by ariard            #+#    #+#             */
-/*   Updated: 2016/12/29 20:30:36 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/16 23:06:46 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void		ft_bubble_cmpsort(t_dlist **begin_list,
 	tmp = *begin_list;
 	while (tmp->next)
 	{
-		if (((cmp)(tmp->sort, (tmp->next)->sort)) < 0)
+		if (((cmp)(tmp->key, (tmp->next)->key)) < 0)
 		{
 			ft_list_swap(begin_list, tmp, tmp->next);
 			tmp = *begin_list;

@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/28 17:21:25 by ariard            #+#    #+#             */
-/*   Updated: 2016/12/29 20:01:16 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/17 17:34:14 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ size_t				ft_strlenchr(const char *s, char c);
 */
 
 char				*ft_strdup(const char *s1);
+
+/*
+** Save a copy of a string until match
+*/
+
+char				*ft_strduptr(char *str, int(*is)(int c));
 
 /*
 ** Copy string
@@ -60,6 +66,12 @@ char				*ft_strcat(char *s1, const char *s2);
 */
 
 char				*ft_strncat(char *s1, const char *s2, size_t n);
+
+/*
+** Concatenate strings until 'c' charachter
+*/
+
+char				*ft_strchrcat(char *dst, char *src, char c);
 
 /*
 ** Concatenate strings at most size of the buffer
@@ -141,6 +153,12 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 
 /*
+** Whitespace character test
+*/
+
+int					ft_isspace(int c);
+
+/*
 ** Lower case to upper case letter conversion
 */
 
@@ -216,12 +234,67 @@ char				*ft_strtrim(char const *s);
 ** Return a tab of new strings from an old one splited by 'c' character
 */
 
-char				**ft_strsplit(char const *s, char c);
+char				**ft_strsplit(char *s, char c);
 
 /*
 ** Return the length of a wchar
 */
 
 size_t				ft_sizewchar(wchar_t w);
+
+/*
+** Count the number of words in a string with a function delimiter
+*/
+
+size_t				ft_count_words_ptr(char *str, int (*is)(int c));
+
+/*
+** Count the number of words in a string with a charachter delimiter
+*/
+
+size_t				ft_count_words(char *str, int c);
+
+
+/*
+**	Return an array of new strings from an old one splitted by user macro		
+*/
+
+char				**ft_strsplitptr(char *str, int (*is)(int c));
+
+/*
+** Delete a pattern in a string and return a new one
+*/
+
+char				*ft_str_epure(char *str, char *pattern);
+
+/* 
+** Subsitute a character by another in the same string
+*/
+
+char				*ft_str_substitute(char *str, char c, char n);
+
+/*
+** Insert a character at the 'n' position of a string
+*/
+
+int					ft_str_inschr(char *str, char c, int pos);
+
+/*
+** Delete a character at the 'n' position of a string
+*/
+
+int					ft_str_delchr(char *str, int pos);
+
+/*
+** Copy a string from a "begin" to an "end and return a new one
+*/
+
+char				*ft_str_copy(char *str, int begin, int end);
+
+/*
+** Count the occurences of char 'c' in a string
+*/
+
+int					ft_count_char(char *str, int (*is)(int));
 
 #endif

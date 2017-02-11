@@ -6,13 +6,16 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 16:16:29 by ariard            #+#    #+#             */
-/*   Updated: 2016/11/23 16:35:40 by ariard           ###   ########.fr       */
+/*   Updated: 2017/01/29 20:44:36 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-void	ft_putchar_fd(char c, int fd)
+int		ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+	if (c)
+		return (1);
+	return (0);
 }
