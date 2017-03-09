@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strduptr.c                                      :+:      :+:    :+:   */
+/*   ft_tabdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ariard <ariard@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/06 13:37:12 by ariard            #+#    #+#             */
-/*   Updated: 2017/02/14 12:14:32 by ariard           ###   ########.fr       */
+/*   Created: 2017/02/14 13:46:37 by ariard            #+#    #+#             */
+/*   Updated: 2017/02/14 14:43:31 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-char		*ft_strduptr(char *str, int (*is)(int c))
+void		ft_tabdel(char **arg)
 {
-	char	*new;
-	char	*tmp;
+	char	**temp;
 
-	new = ft_memalloc(sizeof(char *) * ft_strlen(str) + 1);
-	tmp = new;
-	while (*str && (is)((int)*str) == 0)
-		*new++ = *str++;
-	*new = 0;
-	return (tmp);
+	temp = arg;
+	while (*arg)
+		ft_strdel(&(*arg++));
+	free(temp);
 }

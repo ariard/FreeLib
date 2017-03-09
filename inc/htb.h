@@ -6,12 +6,12 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/31 17:20:31 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/16 20:12:34 by ariard           ###   ########.fr       */
+/*   Updated: 2017/02/27 20:55:03 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HTABLE_H
-# define HTABLE_H
+#ifndef HTB_H
+# define HTB_H
 
 # include "dlist.h"
 

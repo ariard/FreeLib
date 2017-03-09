@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/02 19:49:20 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/30 19:13:51 by ariard           ###   ########.fr       */
+/*   Updated: 2017/02/21 12:02:22 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void		*ft_cht_lookup(const t_cht *htb, void *data,
 	t_dlist	*tmp;
 
 	bucket = htb->h(data, htb->capacity);
+	bucket = 0;
 	tmp = htb->head[bucket];
 	while (tmp)
 	{

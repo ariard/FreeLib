@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 19:19:13 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/09 20:15:22 by ariard           ###   ########.fr       */
+/*   Updated: 2017/02/27 20:53:35 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char			**ft_array_strdup(char **array);
 
 char			**ft_array_add(char **array, char *string);
 
-/* 
+/*
 ** Macro to get the size of an array
 */
 

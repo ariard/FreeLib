@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:12:51 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/15 16:18:03 by ariard           ###   ########.fr       */
+/*   Updated: 2017/02/27 20:46:25 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int			ft_count_pattern(char *str, char *pattern)
 	return (size);
 }
 
-char		*ft_str_epure(char *str, char *pattern)
+char				*ft_str_epure(char *str, char *pattern)
 {
 	int		len;
 	char	*new;
@@ -42,7 +42,7 @@ char		*ft_str_epure(char *str, char *pattern)
 
 	tmp = str;
 	len = ft_strlen(pattern);
-	new = ft_memalloc(sizeof(char) * (ft_strlen(str) - 
+	new = ft_memalloc(sizeof(char) * (ft_strlen(str) -
 				(len * ft_count_pattern(str, pattern)) + 1));
 	tmp = new;
 	while (*str)

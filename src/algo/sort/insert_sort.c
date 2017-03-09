@@ -6,14 +6,14 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 16:04:40 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/16 23:18:21 by ariard           ###   ########.fr       */
+/*   Updated: 2017/02/28 10:31:15 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-static void	ft_list_ins_special(t_dlist **begin_list, t_dlist *node1, t_dlist
-		*node2)
+static void			ft_list_ins_special(t_dlist **begin_list,
+					t_dlist *node1, t_dlist *node2)
 {
 	if (!node2 || !node1)
 		return ;
@@ -29,7 +29,7 @@ static void	ft_list_ins_special(t_dlist **begin_list, t_dlist *node1, t_dlist
 	}
 }
 
-static t_dlist 	*ft_list_rem_special(t_dlist **begin_list, t_dlist *node)
+static t_dlist		*ft_list_rem_special(t_dlist **begin_list, t_dlist *node)
 {
 	if (!node || !*begin_list)
 		return (0);
@@ -46,8 +46,8 @@ static t_dlist 	*ft_list_rem_special(t_dlist **begin_list, t_dlist *node)
 	return (node);
 }
 
-void		ft_insert_cmpsort(t_dlist **begin_list,
-		int (*cmp)(const void *key1, const void *key2))
+void				ft_insert_cmpsort(t_dlist **begin_list,
+					int (*cmp)(const void *key1, const void *key2))
 {
 	t_dlist		*tmp;
 	t_dlist		*tmp2;
@@ -75,7 +75,7 @@ void		ft_insert_cmpsort(t_dlist **begin_list,
 	}
 }
 
-void		ft_insert_keysort(t_dlist **begin_list)
+void				ft_insert_keysort(t_dlist **begin_list)
 {
 	t_dlist		*tmp;
 	t_dlist		*tmp2;

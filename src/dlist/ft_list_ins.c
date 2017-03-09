@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_ins.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ariard <ariard@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 17:50:04 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/16 23:18:01 by ariard           ###   ########.fr       */
+/*   Created: 2017/02/27 20:50:10 by ariard            #+#    #+#             */
+/*   Updated: 2017/02/27 20:50:37 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"free.h"
+#include "free.h"
 
 void		ft_list_ins(t_dlist *node1, t_dlist *node2)
 {

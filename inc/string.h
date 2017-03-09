@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/28 17:21:25 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/17 17:34:14 by ariard           ###   ########.fr       */
+/*   Updated: 2017/02/27 20:58:09 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -254,9 +254,8 @@ size_t				ft_count_words_ptr(char *str, int (*is)(int c));
 
 size_t				ft_count_words(char *str, int c);
 
-
 /*
-**	Return an array of new strings from an old one splitted by user macro		
+**	Return an array of new strings from an old one splitted by user macro
 */
 
 char				**ft_strsplitptr(char *str, int (*is)(int c));
@@ -267,7 +266,7 @@ char				**ft_strsplitptr(char *str, int (*is)(int c));
 
 char				*ft_str_epure(char *str, char *pattern);
 
-/* 
+/*
 ** Subsitute a character by another in the same string
 */
 
@@ -297,4 +296,15 @@ char				*ft_str_copy(char *str, int begin, int end);
 
 int					ft_count_char(char *str, int (*is)(int));
 
+/*
+** Copy a string while ptr true
+*/
+
+char				*ft_strcpyptr(char *dst, char *src, int (*is)(int c));
+
+/*
+**	Clean an array of strings
+*/
+
+void				ft_tabdel(char **arg);
 #endif

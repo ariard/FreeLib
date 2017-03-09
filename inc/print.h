@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/29 17:29:13 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/29 20:45:50 by ariard           ###   ########.fr       */
+/*   Updated: 2017/02/27 20:57:12 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int					ft_putwchar(wchar_t w);
 
 int					ft_putwstr(wchar_t *w);
 
-int					ft_putarray_fd(char **print, int delimiter, 
+int					ft_putarray_fd(char **print, int delimiter,
 					int last, int fd);
 
 #endif

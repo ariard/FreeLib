@@ -6,7 +6,7 @@
 #    By: ariard <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/28 17:57:47 by ariard            #+#    #+#              #
-#    Updated: 2017/01/17 17:32:59 by ariard           ###   ########.fr        #
+#    Updated: 2017/02/14 13:52:31 by ariard           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,9 @@ SRCS_STRING = $(SRC_DIR)/string/ft_isalnum.c \
 			$(SRC_DIR)/string/ft_str_substitute.c \
 			$(SRC_DIR)/string/ft_str_inschr.c \
 			$(SRC_DIR)/string/ft_str_delchr.c \
-			$(SRC_DIR)/string/ft_count_char.c
+			$(SRC_DIR)/string/ft_count_char.c \
+			$(SRC_DIR)/string/ft_strcpyptr.c \
+			$(SRC_DIR)/string/ft_tabdel.c
 
 SRCS_ARRAY	= $(SRC_DIR)/array/ft_array_strdup.c \
 			$(SRC_DIR)/array/ft_array_del.c \
@@ -148,6 +150,7 @@ SRCS_BTREE= $(SRC_DIR)/btree/ft_btree_init.c \
 			$(SRC_DIR)/btree/ft_rem_node.c \
 			$(SRC_DIR)/btree/ft_btree_destroy.c \
 			$(SRC_DIR)/btree/ft_display_prefix.c \
+			$(SRC_DIR)/btree/ft_apply_postfix.c \
 			$(SRC_DIR)/btree/ft_btree_sort_ins.c
 
 SRCS += $(SRCS_STRING)

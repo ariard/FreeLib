@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strduptr.c                                      :+:      :+:    :+:   */
+/*   ft_apply_postfix.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ariard <ariard@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/06 13:37:12 by ariard            #+#    #+#             */
-/*   Updated: 2017/02/14 12:14:32 by ariard           ###   ########.fr       */
+/*   Created: 2017/02/13 17:07:52 by ariard            #+#    #+#             */
+/*   Updated: 2017/02/13 17:18:23 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-char		*ft_strduptr(char *str, int (*is)(int c))
+void		ft_apply_postfix(t_btree *root, void (*apply)(void *))
 {
-	char	*new;
-	char	*tmp;
-
-	new = ft_memalloc(sizeof(char *) * ft_strlen(str) + 1);
-	tmp = new;
-	while (*str && (is)((int)*str) == 0)
-		*new++ = *str++;
-	*new = 0;
-	return (tmp);
+	if (root)
+	{
+		ft_apply_postfix(root->left, apply);
+		ft_apply_postfix(root->right, apply);
+		(apply)(root);
+	}
 }

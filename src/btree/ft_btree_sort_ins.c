@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 20:24:57 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/16 22:30:31 by ariard           ###   ########.fr       */
+/*   Updated: 2017/02/27 20:52:38 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ t_btree		*ft_btree_sort_ins(t_root *tree, void *data, void *key)
 			{
 				if (tmp->left == NULL)
 					return (ft_btree_create_node(&tmp->left, data, key));
-					
 				tmp = tmp->left;
 			}
 			if (tmp->right)

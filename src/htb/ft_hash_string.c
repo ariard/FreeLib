@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/02 16:35:24 by ariard            #+#    #+#             */
-/*   Updated: 2017/01/03 18:04:34 by ariard           ###   ########.fr       */
+/*   Updated: 2017/02/27 20:49:24 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int				ft_hash_string(const void *key, int size)
 {
-	const char	*ptr;
-	unsigned 	int		tmp;
-	unsigned 	int		val;
+	const char		*ptr;
+	unsigned int	tmp;
+	unsigned int	val;
 
 	val = 0;
 	ptr = key;

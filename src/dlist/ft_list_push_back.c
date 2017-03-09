@@ -6,7 +6,7 @@
 /*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 01:42:02 by ariard            #+#    #+#             */
-/*   Updated: 2017/02/23 20:29:12 by ariard           ###   ########.fr       */
+/*   Updated: 2017/02/27 20:49:48 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_list_push_back(t_dlist **begin_list, void *data,
 			tmp->next = node;
 			node->previous = tmp2;
 		}
-		else 
+		else
 			*begin_list = node;
 	}
 }

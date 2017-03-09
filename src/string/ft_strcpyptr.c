@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strduptr.c                                      :+:      :+:    :+:   */
+/*   ft_strcpyptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ariard <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ariard <ariard@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/06 13:37:12 by ariard            #+#    #+#             */
-/*   Updated: 2017/02/14 12:14:32 by ariard           ###   ########.fr       */
+/*   Created: 2017/02/14 12:11:15 by ariard            #+#    #+#             */
+/*   Updated: 2017/02/14 12:17:32 by ariard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free.h"
 
-char		*ft_strduptr(char *str, int (*is)(int c))
+char		*ft_strcpyptr(char *dst, char *src, int (*is)(int c))
 {
-	char	*new;
 	char	*tmp;
 
-	new = ft_memalloc(sizeof(char *) * ft_strlen(str) + 1);
-	tmp = new;
-	while (*str && (is)((int)*str) == 0)
-		*new++ = *str++;
-	*new = 0;
+	tmp = dst;
+	while (*src && *dst && (is)((int)*src) == 0)
+		*dst++ = *src++;
+	*dst = 0;
 	return (tmp);
 }
